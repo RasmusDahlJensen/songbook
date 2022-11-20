@@ -7,15 +7,6 @@ require_once(COREROOT . "classes/autoload.php");
 
 
 
-$dns = "mysql:host=localhost;dbname=songbook";
-$username = "testUser";
-$password = "";
-
-try{
-    $db = new PDO($dns, $username, $password);
-
-} catch(PDOexception $err){
-    echo "Fejl i tilslutning af database: " . $err;
-}
+$db = new dbconf;
 
 ?>
