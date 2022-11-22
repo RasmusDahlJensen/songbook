@@ -14,13 +14,8 @@ $song->lastName = "Jensen";
 $song->email = "rjen@placeholder.dk";
 $song->password = "qwerty1234";
 $song->birthday = "01/01-2000";
-$song->address = "placeholder street";
-$song->postcode = "9000";
-$song->city = "placeholderCity";
-$song->country = "placeholderstan";
 // $song->showUserDetails();
 // $song->getFullName();
-// $song->getFullAddress();
 
 
 
