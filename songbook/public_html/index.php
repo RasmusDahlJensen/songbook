@@ -12,13 +12,20 @@ $song = new Song;
 <?php 
 
 $song = new User();
+$song->id = "1";
+$song->username = "raje";
 $song->firstName = "Rasmus";
 $song->lastName = "Jensen";
 $song->email = "rjen@placeholder.dk";
 $song->password = "qwerty1234";
 $song->birthday = "01/01-2000";
-// $song->showUserDetails();
-// $song->getFullName();
+$song->address = "placeholder street";
+$song->postcode = "9000";
+$song->city = "placeholderCity";
+$song->country = "placeholderstan";
+$song->showUserDetails();
+$song->getFullName();
+$song->getFullAddress();
 
 
 
