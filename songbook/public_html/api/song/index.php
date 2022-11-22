@@ -11,7 +11,10 @@ Route::add('/api/song/', function() {
 
 // Hent sang detaljer
 Route::add('/api/song/([0-9]*)', function($id) {
-    echo "hent detaljer";
+    $song = new Song;
+    $result = $song->details($id);
+    echo Tools::jsonParser($result);
+
 });
 
 Route::run('/');
