@@ -1,15 +1,21 @@
-<?php
-class User {
-	public $firstname;
-	public $lastname;
-	public $email;
-	
-	public function showUserDetails() {
-		echo "<p><h2>Fornavn: ".$this->firstname."</h2><br />";
-		echo "Efternavn: ".$this->lastname."<br />";
-		echo "Email: ".$this->email."</p>";
-	}
+<?php 
+class User{
 
+    public $firstName;
+    public $lastName;
+    public $email;
+    public $password;
+    public $birthday;
+
+    public function showUserDetails() {
+        echo "<p>" . $this->firstName . "</p>";
+        echo "<p>" . $this->lastName . "</p>";
+        echo "<p>" . $this->email . "</p>";
+        echo "<p>" . $this->birthday . "</p>";
+    }
+    public function getFullName() {
+        echo "<p> $this->firstName $this->lastName </p>";
+    }
 
 }
 ?>
