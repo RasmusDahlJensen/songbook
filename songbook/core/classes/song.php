@@ -16,7 +16,7 @@ class Song{
     }
 
 
-    public function list() {
+    public function listSong() {
         $sql ="SELECT id, title
                 FROM song 
                 ORDER BY title";

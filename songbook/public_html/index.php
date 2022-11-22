@@ -4,7 +4,11 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/assets/incl/init.php");
 
 
 $song = new Song;
-// var_dump($song->list());
+// var_dump($song->listSong());
+
+
+$artist = new artist;
+// var_dump($artist->listArtist())
 
 ?>
 
