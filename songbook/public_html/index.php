@@ -23,9 +23,9 @@ $song->address = "placeholder street";
 $song->postcode = "9000";
 $song->city = "placeholderCity";
 $song->country = "placeholderstan";
-$song->showUserDetails();
-$song->getFullName();
-$song->getFullAddress();
+// $song->showUserDetails();
+// $song->getFullName();
+// $song->getFullAddress();
 
 
 
