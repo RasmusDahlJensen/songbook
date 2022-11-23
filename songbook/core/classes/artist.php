@@ -20,16 +20,13 @@ class Artist{
     }
 
     public function details($id) {
-
 		$params = array(
 			'id' => array($id, PDO::PARAM_INT)
-
 		);
 
 		$sql = "SELECT a.id, a.name 
 				FROM artist a 
 				WHERE a.id = :id";
-
 		return $this->db->query($sql, $params, Db::RESULT_SINGLE);
 	}
 }
