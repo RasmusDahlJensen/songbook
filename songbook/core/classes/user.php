@@ -50,5 +50,28 @@ class User{
         return $this->db->lastInsertId();
     }
 
+    //update user
+
+    public function update(){
+        $params = array(
+            'id' => array($this->id, PDO::PARAM_INT),
+            'username' => array($this->username, PDO::PARAM_STR),
+            'firstname' => array($this->firstname, PDO::PARAM_STR),
+            'lastname' => array($this->lastname, PDO::PARAM_STR),
+            'email' => array($this->email, PDO::PARAM_STR),
+            'password' => array($this->password, PDO::PARAM_STR)
+        );
+
+        echo $sql = "UPDATE user set
+                username = :username,
+                firstname = :firstname,
+                lastname = :lastname,
+                email = :email,
+                password = :password
+                WHERE id = :id";
+
+        return $this->db->query($sql, $params);
+    }
+
 }
 ?>

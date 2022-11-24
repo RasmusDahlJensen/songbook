@@ -36,5 +36,28 @@ Route::add('/api/user/', function(){
 
 }, 'post');
 
+//update user
+
+Route::add('/api/user/', function(){
+    $data = file_get_contents("php://input");
+	parse_str($data, $parsed_data);
+
+    $user = new User;
+	$user->id = isset($parsed_data['id']) && !empty($parsed_data['id']) ? $parsed_data['id'] : null;
+	$user->username = isset($parsed_data['username']) && !empty($parsed_data['username']) ? $parsed_data['username'] : null;
+	$user->firstname = isset($parsed_data['firstname']) && !empty($parsed_data['firstname']) ? $parsed_data['firstname'] : null;
+	$user->lastname = isset($parsed_data['lastname']) && !empty($parsed_data['lastname']) ? $parsed_data['lastname'] : null;
+	$user->email = isset($parsed_data['email']) && !empty($parsed_data['email']) ? $parsed_data['email'] : null;
+	$user->password = isset($parsed_data['password']) && !empty($parsed_data['password']) ? $parsed_data['password'] : null;
+
+    
+	if($user->id && $user->username && $user->firstname && $user->lastname && $user->email && $user->password) {
+        echo $user->update();
+	} else {
+		echo false;
+	}
+
+}, 'put');
+
 Route::run('/');
 ?>

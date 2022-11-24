@@ -47,7 +47,7 @@ Route::add('/api/artist/', function(){
 	if($artist->id && $artist->name) {
         echo $artist->update();
 	} else {
-		echo "Kan ikke oprette artisten";
+		echo false;
 	}
 
 }, 'put');
