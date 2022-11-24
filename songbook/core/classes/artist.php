@@ -31,7 +31,7 @@ class Artist{
 		return $this->db->query($sql, $params, Db::RESULT_SINGLE);
 	}
 
-        //Opræt artist
+        //create artist
         public function create(){
             $params = array(
                 'name' => array($this->name, PDO::PARAM_STR),

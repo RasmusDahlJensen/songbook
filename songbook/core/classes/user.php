@@ -33,6 +33,22 @@ class User{
 		return $this->db->query($sql, $params, Db::RESULT_SINGLE);
 	}
 
+    //Create user
+    public function create(){
+        $params = array(
+            'username' => array($this->username, PDO::PARAM_STR),
+            'firstname' => array($this->firstname, PDO::PARAM_STR),
+            'lastname' => array($this->lastname, PDO::PARAM_STR),
+            'email' => array($this->email, PDO::PARAM_STR),
+            'password' => array($this->password, PDO::PARAM_INT)
+        );
+
+        $sql = "INSERT INTO user(username, firstname, lastname, email, password)
+                VALUES(:username, :firstname, :lastname, :email, :password)";
+
+        $this->db->query($sql, $params);
+        return $this->db->lastInsertId();
+    }
 
 }
 ?>
