@@ -44,6 +44,19 @@ class Artist{
             return $this->db->lastInsertId();
         }
 
+        //update artist
+        public function update(){
+            $params = array(
+                'id' => array($this->id, PDO::PARAM_INT),
+                'name' => array($this->name, PDO::PARAM_STR)
+            );
+    
+            $sql = "UPDATE artist SET
+                    name = :name
+                    WHERE id = :id";
+    
+            return $this->db->query($sql, $params);
+        }
 }
 
 ?>
