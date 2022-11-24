@@ -22,7 +22,6 @@ Route::add('/api/artist/([0-9]*)', function($id) {
 
 Route::add('/api/artist/', function(){
     $artist = new Artist;
-    // $song->title = $_POST['title'];
 	$artist->name = isset($_POST['name']) && !empty($_POST['name']) ? $_POST['name'] : null;
 
 	if($artist->name) {
