@@ -52,5 +52,12 @@ Route::add('/api/artist/', function(){
 
 }, 'put');
 
+//Delete artist
+
+Route::add('/api/artist/([0-9]*)', function($id) {
+	$artist = new Artist;
+	echo $artist->delete($id);
+}, 'delete');
+
 Route::run('/');
 ?>

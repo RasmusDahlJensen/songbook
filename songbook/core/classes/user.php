@@ -73,5 +73,16 @@ class User{
         return $this->db->query($sql, $params);
     }
 
+    //Delete user
+    public function delete($id) {
+		$params = array(
+			'id' => array($id, PDO::PARAM_INT)
+		);
+		
+		$sql = "DELETE FROM user 
+				WHERE id = :id";
+		return $this->db->query($sql, $params);
+	}
+
 }
 ?>

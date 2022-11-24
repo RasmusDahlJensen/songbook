@@ -57,6 +57,18 @@ class Artist{
     
             return $this->db->query($sql, $params);
         }
+
+        //delete artist
+
+        public function delete($id) {
+            $params = array(
+                'id' => array($id, PDO::PARAM_INT)
+            );
+            
+            $sql = "DELETE FROM artist 
+                    WHERE id = :id";
+            return $this->db->query($sql, $params);
+        }
 }
 
 ?>

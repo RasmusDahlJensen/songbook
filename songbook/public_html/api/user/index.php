@@ -59,5 +59,11 @@ Route::add('/api/user/', function(){
 
 }, 'put');
 
+//Delete user
+Route::add('/api/user/([0-9]*)', function($id) {
+	$user = new User;
+	echo $user->delete($id);
+}, 'delete');
+
 Route::run('/');
 ?>
