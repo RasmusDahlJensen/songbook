@@ -39,7 +39,7 @@ class Song{
 		return $this->db->query($sql, $params, Db::RESULT_SINGLE);
 	}
 
-    //Opræt sang
+    //Create sang
     public function create(){
         $params = array(
             'title' => array($this->title, PDO::PARAM_STR),

@@ -29,8 +29,12 @@ Route::add('/api/song/', function(){
 	} else {
 		echo "Kan ikke oprette sangen";
 	}
-
 }, 'post');
+
+
+Route::add('/api/song/', function() {
+    echo"ready!";
+}, 'put');
 
 Route::run('/');
 ?>
