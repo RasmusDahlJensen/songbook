@@ -44,5 +44,14 @@ class Song{
 		return $this->db->query($sql, $params, Db::RESULT_SINGLE);
 	}
 
+    public function create(){
+        echo "create method  on class song";
+    }
+
+
+
+    //create video 7:33
 }
+
+
 ?>

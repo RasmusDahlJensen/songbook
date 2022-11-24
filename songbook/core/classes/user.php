@@ -18,6 +18,5 @@ class User{
     public function getFullName() {
         echo "<p> $this->firstName $this->lastName </p>";
     }
-    //TODO:Add create user and select user details
 }
 ?>

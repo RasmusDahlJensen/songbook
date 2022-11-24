@@ -17,5 +17,12 @@ Route::add('/api/song/([0-9]*)', function($id) {
 
 });
 
+Route::add('/api/song/', function(){
+
+    $song = new Song;
+    $song->create();
+
+}, 'post');
+
 Route::run('/');
 ?>

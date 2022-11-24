@@ -30,4 +30,5 @@ class Artist{
 		return $this->db->query($sql, $params, Db::RESULT_SINGLE);
 	}
 }
+
 ?>
