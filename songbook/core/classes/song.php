@@ -73,7 +73,17 @@ class Song{
 		return $this->db->query($sql, $params);
 	}
 
+    //Delete per id
+	public function delete($id) {
+		$params = array(
+			'id' => array($id, PDO::PARAM_INT)
+		);
+		
+		$sql = "DELETE FROM song 
+				WHERE id = :id";
+		return $this->db->query($sql, $params);
+	}
+
+
 }
-
-
 ?>
