@@ -22,7 +22,6 @@ class User{
         return $this->db->query($sql);
     }
 
-        //FIXME: can't get details to show for individual users
     //User details
     public function details($id) {
 		$params = array(

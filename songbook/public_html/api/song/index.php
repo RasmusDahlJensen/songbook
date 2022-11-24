@@ -33,7 +33,20 @@ Route::add('/api/song/', function(){
 
 
 Route::add('/api/song/', function() {
-    echo"ready!";
+	$data = file_get_contents("php://input");
+	parse_str($data, $parsed_data);
+
+	$song = new Song;
+	$song->id = isset($parsed_data['id']) && !empty($parsed_data['id']) ? (int)$parsed_data['id'] : null;
+	$song->title = isset($parsed_data['title']) && !empty($parsed_data['title']) ? $parsed_data['title'] : null;
+	$song->content = isset($parsed_data['content']) && !empty($parsed_data['content']) ? $parsed_data['content'] : null;
+	$song->artist_id = isset($parsed_data['artist_id']) && !empty($parsed_data['artist_id']) ? (int)$parsed_data['artist_id'] : null;
+
+	if($song->id && $song->title && $song->content && $song->artist_id) {
+		echo $song->update();
+	} else {
+		echo false;
+	}
 }, 'put');
 
 Route::run('/');
