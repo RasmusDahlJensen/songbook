@@ -40,7 +40,7 @@ class User{
             'firstname' => array($this->firstname, PDO::PARAM_STR),
             'lastname' => array($this->lastname, PDO::PARAM_STR),
             'email' => array($this->email, PDO::PARAM_STR),
-            'password' => array($this->password, PDO::PARAM_INT)
+            'password' => array($this->password, PDO::PARAM_STR)
         );
 
         $sql = "INSERT INTO user(username, firstname, lastname, email, password)
